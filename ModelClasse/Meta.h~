@@ -1,0 +1,40 @@
+//
+//  Keyword.h
+//  
+//
+//  Created by Oumar TRAORE on 10/06/2014.
+//
+//
+
+#ifndef _Meta_h
+#define _Meta_h
+
+#include <string>
+
+using namespace std;
+
+
+class Meta
+{
+private:
+    int identifiant;
+    string content;
+    int rank;
+    
+    int linkId;
+public:
+    Meta();
+    int getIdentifiant();
+    void setIdentifiant(int f);
+    
+    string getContent();
+    void setContent(string element);
+    
+    int getLinkId();
+    void setLinkId(int f);
+    
+    int getRank();
+    void setRank(int type);
+};
+
+#endif

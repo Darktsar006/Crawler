@@ -1,0 +1,7 @@
+res = mysql_store_result(&mysql);
+      /*while((row = mysql_fetch_row(res)))
+      {
+	//cout << row[0] << endl;
+	// Ajout des liens de départ
+      //crawler.setAllDomaine(string name);
+      }//

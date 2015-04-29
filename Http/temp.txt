@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bienvenu Sur Palmierdor </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="design.css" rel="stylesheet" media="screen">
+            
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="icon.ico" />
+            
+        <meta name="description" content="Bienvenu sur votre site d'actualité palmierdor.co.nf, vous allez trouvez pas mal de renseignement concernant la culture de l'huile de plame en plantation, nous vous parlons ici de la culture de cette plante en Guinée Conakry">
+            
+            
+        <meta name="keywords" content="Huile de palme, palmier dor, palmierdor, Huile de palme Guinée, l'huile de guinée, le palmier de guinée, la guinée et l'huile de palme, l'huile de palme dans nos plat, les huiles olégineuses, huile de palme plante olégineuse, l'huile pour le corps, l'huile pour les cheveux">
+            
+            
+        <meta name="author" content="TRAORE Oumar">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="language" content="fr-FR">
+                                
+        <meta http-equiv="expires" content="Wed, 31 Dec 2014 11:12:01 GMT">
+            
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        
+        <script src="palmierdor.js"></script>
+            
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+             
+            ga('create', 'UA-50419214-1', 'co.nf');
+            ga('send', 'pageview');
+                                         
+            ga(‘set’, ‘&uid’, {{UA-50419214-1}}); // Définir l'ID utilisateur à partir du paramètre user_id de l'utilisateur connecté.
+        </script>
+    
+    <meta property="og:url"             content="http://samples.ogp.me/136756249803614" />
+    <meta property="og:title"           content="Chocolate Pecan Pie" />
+    <meta property="og:image"           content="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-prn1/851565_496755187057665_544240989_n.jpg" />
+    </head>
+    
+    <body>
+        <div id="fb-root"></div>
+        <script>
+            // You probably don't want to use globals, but this is just example code
+            var fbAppId = 617710491645960;
+            var objectToLike = 'http://techcrunch.com/2013/02/06/facebook-launches-developers-live-video-channel-to-keep-its-developer-ecosystem-up-to-date/';
+            
+            // This check is just here to make sure you set your app ID. You don't
+            // need to use it in production.
+            if (fbAppId === 'replace me') {
+                alert('Please set the fbAppId in the sample.');
+            }
+
+            
+            window.fbAsyncInit = function() {
+                FB.init({
+                        appId      : 617710491645960,
+                        status     : true, // check login status
+                        cookie     : true, // enable cookies to allow the server to access the session
+                        xfbml      : true  // parse XFBML
+                        });
+                        
+                        // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+                        // for any authentication related change, such as login, logout or session refresh. This means that
+                        // whenever someone who was previously logged out tries to log in again, the correct case below
+                        // will be handled.
+                        FB.Event.subscribe('auth.authResponseChange', function(response) {
+                                           // Here we specify what we do with the response anytime this event occurs.
+                                           if (response.status === 'connected') {
+                                           // The response object is returned with a status field that lets the app know the current
+                                           // login status of the person. In this case, we're handling the situation where they
+                                           // have logged in to the app.
+                                           testAPI();
+                                           } else if (response.status === 'not_authorized') {
+                                           // In this case, the person is logged into Facebook, but not into the app, so we call
+                                           // FB.login() to prompt them to do so.
+                                           // In real-life usage, you wouldn't want to immediately prompt someone to login
+                                           // like this, for two reasons:
+                                           // (1) JavaScript created popup windows are blocked by most browsers unless they
+                                           // result from direct interaction from people using the app (such as a mouse click)
+                                           // (2) it is a bad experience to be continually prompted to login upon page load.
+                                           FB.login();
+                                           } else {
+                                           // In this case, the person is not logged into Facebook, so we call the login()
+                                           // function to prompt them to do so. Note that at this stage there is no indication
+                                           // of whether they are logged into the app. If they aren't then they'll see the Login
+                                           // dialog right after they log in to Facebook.
+                                           // The same caveats as above apply to the FB.login() call here.
+                                           FB.login();
+                                           }
+                                           });
+            };
+        
+        // Load the SDK asynchronously
+        (function(d){
+         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         ref.parentNode.insertBefore(js, ref);
+         }(document));
+         
+         // Here we run a very simple test of the Graph API after login is successful.
+         // This testAPI() function is only called in those cases.
+         function testAPI() {
+             console.log('Welcome!  Fetching your information.... ');
+             FB.api('/me', function(response) {
+                    console.log('Good to see you, ' + response.name + '.');
+                    });
+         }
+        
+        function postLike() {
+            FB.api(
+                   'https://graph.facebook.com/me/og.likes',
+                   'post',
+                   { object: objectToLike,
+                   privacy: {'value': 'SELF'} },
+                   function(response) {
+                   if (!response) {
+                   alert('Error occurred.');
+                   } else if (response.error) {
+                   document.getElementById('result').innerHTML =
+                   'Error: ' + response.error.message;
+                   } else {
+                   document.getElementById('result').innerHTML =
+                   '<a href=\"https://www.facebook.com/me/activity/' +
+                   response.id + '\">' +
+                   'Story created.  ID is ' +
+                   response.id + '</a>';
+                   }
+                   }
+                   );
+        }
+        </script>
+        
+        <script>(function(d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) return;
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=617710491645960";
+                 fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+            </script>
+        
+        <!-- Like and share -->
+        <script>(function(d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) return;
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=326322370826104&version=v2.0";
+                 fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+        <!-- Share ---->
+        
+        <script>(function(d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) return;
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=617710491645960&version=v2.0";
+                 fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+        </script>
+        
+        <header>
+            <div class="enteteOfMe1">
+                
+                <div class="enteOfMe1Search">
+                    <form class="form-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="text" class="input-medium search-query">
+                        <button type="submit" class="btn">Search</button>
+                    </form>
+                </div>
+                
+                <div class="enteOfMe1Menu">
+                    <a href="contact.html"> <span class="glyphicon glyphicon-envelope"></span> Contact </a>
+                    <a href="forum.html"> <span class="glyphicon glyphicon-flag"></span> Forum </a>
+                </div>
+                
+            </diV>
+            
+            <div class="entetePalmierDor">
+            
+                <img src="logo.jpg" class="logo" alt="Logo du Site PalmierDor" />
+                
+                <div class="facebookInteractUserOfMe">
+                    <div class="fb-like" data-href="https://www.facebook.com/palmierdorcoqvcezavr?fref=ts" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                </div>
+                    
+                    <div class="fb-login-button" data-max-rows="10" data-size="medium" data-show-faces="true" data-auto-logout-link="true">
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            <!-- Premier Grand Menu -->
+            <div class="enteteMenuOfMe1">
+                <nav>
+                    <ul class="nav nav-tabs">
+                        <li class="active"> <a href="index.html"> <span class="glyphicon glyphicon-home"></span> Home </a> </li>
+                        <li> <a href="https://www.facebook.com/palmierdorcoqvcezavr?skip_nax_wizard=true"> <span class="glyphicon glyphicon-user"></span> Facebook </a> </li>
+                        <li> <a href="forum.html"> <span class="glyphicon glyphicon-inbox"></span> Forum </a></li>
+                        <li> <a href="contact.html"> <span class="glyphicon glyphicon-tag"></span> Contact </a></li>
+                        <li> <a href="FluxFacebook.html"> <span class="glyphicon glyphicon-globe"></span> Flux Sociaux </a></li>
+                    </ul>
+                    
+                </nav>
+                
+            </div>
+            
+        </header>
+        
+        
+        <section>
+
+            <div class="sectionMenuOfMe">
+            
+                <nav>
+                    <ul class="nav nav-list">
+                        <li class="active"> <a href="generalite.html"> <span class="glyphicon glyphicon-cog"></span>  </i> Generalite </a> </li>
+                        <li> <a href="culture.html"> <span class="glyphicon glyphicon-leaf"></span> Culture </a></li>
+                        <li> <a href="investir.html"> <span class="glyphicon glyphicon-usd"></span>  Investir </a></li>
+                        <li> <a href="guide.html"> <span class="glyphicon glyphicon-book"></span>  Guide </a> </li>
+                    </ul>
+                
+                </nav>
+                
+            </div>
+            
+            <div class="content">
+                <article>
+                    
+                    <div class="parametreCarouselOfMe">
+                    
+                        <div id="myCarousel" class="carousel slide">
+                            <ol class="carousel-indicators">
+                                <li data-target="image1.jpg" data-slide-to="0" class="active"></li>
+                                <li data-target="image2.png" data-slide-to="1"></li>
+                                <li data-target="image3.jpg" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                            
+                                <div class="active item">
+                                    
+                                    <img src="image1.jpg" class="icenter" alt="Logo du Site PalmierDor"/>
+                                
+                                </div>
+                            
+                            
+                                <div class="item">
+                                
+                                    <img src="image2.png" class="icenter" alt="Logo du Site PalmierDor" />
+                                
+                                </div>
+                            
+                                <div class="item">
+                                
+                                    <img src="image3.jpg" class="icenter" alt="Logo du Site PalmierDor" />
+                                
+                                </div>
+                                
+                                <div class="item">
+                                    
+                                    <img src="image4.jpg" class="icenter" alt="Logo du Site PalmierDor" />
+                                    
+                                </div>
+                                
+                                <div class="item">
+                                    
+                                    <img src="image5.jpg" class="icenter" alt="Logo du Site PalmierDor" />
+                                    
+                                </div>
+                                
+                                <div class="item">
+                                    
+                                    <img src="image6.png" class="icenter" alt="Logo du Site PalmierDor" />
+                                    
+                                </div>
+                                
+                                <div class="item">
+                                    
+                                    <img src="image7.jpg" class="icenter" alt="Logo du Site PalmierDor" />
+                                    
+                                </div>
+                                
+                                
+                            
+                            </div>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                        </div>
+                    
+                    </div>
+                    
+                </article>
+                
+                
+                <div class="facebookCommentOfMe">
+                    <!--reference au commentaire -->
+                    <div class="fb-comments" data-href="http://www.palmierdor.co.nf/index.html" data-numposts="5" data-colorscheme="light">
+                    </div>
+                </div>
+        
+        </section>
+        
+        <footer>
+            <div class="footerLink">
+                <nav>
+                    <a href="https://soundcloud.com/"> <span class="glyphicon glyphicon-music"></span> Soundcloud </a>
+                    <a href="http://guineenews.org/"> <span class="glyphicon glyphicon-signal"></span> Guineenews.org </a>
+                </nav>
+                
+            </div>
+            
+            <div class="contentFooter">
+                <div class="footerImageLeft">
+                    <img src="logo.jpg" class="logo" alt="Logo du Site PalmierDor" />
+                    <div class="fb-share-button" data-href="http://www.palmierdor.co.nf" data-type="button_count"></div>
+                </div>
+                
+                <div class="footerImageright">
+                    Follows us ... <a href="https://www.facebook.com/beirzlberiuzbv?fref=ts"> <img src="soeur.jpg" class="img-circle" alt="Logo du Site PalmierDor" height="200px" width="200px"/> </a>
+                </div>
+            </div>
+            
+            <div class="footerLink">
+                2014 @ Tous Droits réservés. Site fait par TRAORE Oumar. Project Web Strategie !!!
+            </div>
+            
+        </footer>
+        
+    </body>
+</html>

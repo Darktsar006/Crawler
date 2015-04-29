@@ -1,0 +1,49 @@
+void DbaLink::setStartLink(ListLink crawler)
+{
+  string url = "links";
+  unsigned long a;
+  
+  if(stmG)
+  {
+    if(mysql_stmt_prepare(stmG, GET_URL, strlen(GET_URL)))
+    {
+      cout << "Prepare Error" << endl;
+    }
+  
+    // On lie les parametre à la variable bind
+    memset(bind, 0, sizeof(bind));
+    
+    //url (string)
+    bind[0].buffer_type = MYSQL_TYPE_STRING;
+    bind[0].buffer = (char *)url.c_str();
+    bind[0].buffer_length = STRING_SIZE;
+    bind[0].is_null = 0;
+    a = (unsigned long)url.size();
+    bind[0].length = &a;
+    
+    if(mysql_stmt_bind_param(stmG, bind))
+    {
+      cout << "Bind Error" << endl;
+    } 
+    
+    if(mysql_stmt_execute(stmG))
+    {
+      
+    }
+      //res = mysql_store_result(&mysql);
+      //row = mysql_fetch_row(res);
+      //cout << row[0] << endl;
+      
+      cout << "Not Found3" << endl;
+      
+      /*while((row = mysql_fetch_row(res)))
+      {
+	cout << "Not Found" << endl;
+	// Ajout des liens de départ
+	crawler.setAllDomaine(row[1]);
+      }*/
+    
+    
+  }
+  
+}

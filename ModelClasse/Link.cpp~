@@ -1,0 +1,100 @@
+//
+//  Link.cpp
+//  
+//
+//  Created by Oumar TRAORE on 06/06/2014.
+//
+//
+
+#include "Link.h"
+
+Link::Link()
+{    
+    rank = 0;
+}
+
+Link::~Link()
+{
+  
+}
+
+// Opérateur d'affectation.
+
+Link& Link::operator=(const Link &j)
+{
+  content = j.content;
+  rank = 0; // On va remettre le score à zero dans le cas ou on recrawle la page
+  
+  domaine = j.domaine;
+  
+  
+  return *this;
+}
+
+
+void Link::setContent(string url)
+{
+  content = url;
+}
+
+string Link::getContent()
+{
+    return content;
+}
+
+void Link::addVectorH1(H1 element)
+{
+    h1.push_back(element);
+}
+
+void Link::addVectorMeta(Meta element)
+{
+    meta.push_back(element);
+}
+
+void Link::setTitle(string titre)
+{
+  title.setContent(titre);
+  // On n'en profite pour calculer son score
+  title.setRank();
+}
+
+string Link::getTitle()
+{
+  return title.getContent();
+}
+
+void Link::setRank()
+{
+  rank = 0;
+  
+  title.setRank();
+  rank += title.getRank(); // Score du Titre
+  
+  for(int i = 0; i < (int)h1.size(); i++) // Ajouter au score de tous les titres trouver sur la page
+  {
+    //h1[i].setRank();
+    rank += h1[i].getRank();
+  }
+  
+}
+
+int Link::getRank()
+{
+  return rank;
+}
+
+vector<Meta> Link::getMeta()
+{
+  return meta;
+}
+
+string Link::getDomaine()
+{
+  return domaine;
+}
+
+void Link::setDomaine(string name)
+{
+  domaine = name;
+}
